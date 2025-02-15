@@ -1,4 +1,7 @@
 def cpf_valido(resp):
+    nome = input('Digite sue nome completo:')
+    dados = dict()
+    dados['nome'] = nome
 
     from random import randint
 
@@ -33,8 +36,7 @@ def cpf_valido(resp):
         cpf.append(0)
     else:
         cpf.append(11 - (soma % 11))
-    if cpf not in lista_cpf:
-        lista_cpf.append(cpf)
-    else:
-        print('O CPF em questão já existe.')
-    print(f'O número do CPF é: {cpf}')
+
+    dados['CPF'] = cpf
+    print(f'Nome: {dados['nome']}')
+    print(f'CPF: {dados['CPF']}')
